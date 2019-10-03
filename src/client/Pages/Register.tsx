@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {json, SetAccessToken} from '../Utils/api'
 import { RouteComponentProps } from 'react-router';
+import {ISport} from '../Utils/interfaces'
 
 class Register extends React.Component<IRegisterProps, IRegisterState> {
 
@@ -10,8 +11,17 @@ class Register extends React.Component<IRegisterProps, IRegisterState> {
             name: '',
             email: '',
             password: '',
-            role: ''
+            role: '',
+            sports: [],
+            selectedSport: ''
         };
+    }
+
+    async componentDidMount() {
+        let result = await json('/api/sports');
+        // console.log(result)
+        this.setState({ sports: result })
+        console.log(this.state.sports)
     }
 
     async handleRoleSelect(e: React.ChangeEvent<HTMLInputElement>) {
@@ -36,8 +46,6 @@ class Register extends React.Component<IRegisterProps, IRegisterState> {
             } else {
                 this.props.history.push('/trainers/home')
             }
-            
-
         } catch (error) {
             console.log(error)
         }
@@ -60,6 +68,16 @@ class Register extends React.Component<IRegisterProps, IRegisterState> {
                         <label className="mx-2" >Trainee</label>
                         <input type="radio" name="role" checked={this.state.role === 'trainee'} value="trainee" onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.handleRoleSelect(e)} />
                     </div>
+                    <label>Sport:</label>
+                    <select className="form-control">
+                        <option value="0">Please Select a Sport...</option>
+                        {this.state.sports.map(sport => {
+                            return (
+                                <option value={sport.id}>{sport.name}</option>
+                            )
+                        })}
+                    </select>
+                    
                     <button onClick={(e: React.MouseEvent<HTMLButtonElement>) => this.handleRegister(e)} className="btn btn-dark rounded my-2 form-control">Register!</button>
                 </form>
             </main>
@@ -73,7 +91,9 @@ export interface IRegisterState {
     name: string,
     email: string,
     password: string,
-    role: string
+    role: string,
+    sports: Array<ISport>,
+    selectedSport: string
 }
 
 export default Register;
