@@ -1,12 +1,12 @@
 import * as passport from 'passport';
 import * as bearerStrategy from 'passport-http-bearer';
 
-import {validToken} from '../utils/security/tokens'
+import {ValidToken} from '../utils/security/tokens'
 import db from '../db';
 
 passport.use(new bearerStrategy.Strategy(async (token, done) => {
     try {
-        let payload = await validToken(token);
+        let payload = await ValidToken(token);
         let [user]: any = await db.users.findOneById(payload.userid)
         if(user) {
             done(null, user);
