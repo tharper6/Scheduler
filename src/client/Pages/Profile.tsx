@@ -9,7 +9,9 @@ const Profile: React.SFC<IProfileProps> = (props) => {
 
     const getUser = async () => {
         let result = await json(`/api/users/${props.match.params.userid}`);
+        // console.log(result)
         setUser(result);
+        // console.log(user)
     }
 
     useEffect(() => {
