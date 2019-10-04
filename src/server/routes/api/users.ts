@@ -8,4 +8,9 @@ router.get('/', async(req, res, next) => {
     res.json(users);
 });
 
+router.get('/:id', async(req, res, next) => {
+    let users = await db.users.findOneById(req.params.id);
+    res.json(users);
+});
+
 export default router;

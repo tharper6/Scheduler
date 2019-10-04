@@ -1,19 +1,22 @@
 import * as express from 'express';
 import * as passport from 'passport';
-import {createToken} from '../../utils/security/tokens'
+
+import {CreateToken} from '../../utils/security/tokens'
 
 const router = express.Router();
 
-router.post('/', passport.authenticate('local'), async (req: any, res) => {
+router.post('/', passport.authenticate('local'), async(req: any, res) => {
     try {
-        let token = createToken({ userid: req.user.id });
+        // res.json(req.user)
+        let token = await CreateToken({ userid: req.user.id });
         res.json({
             token,
-            userid: req.user.id
+            userid: req.user.id,
+            role: req.user.role
         });
     } catch (error) {
         console.log(error);
-        res.status(500).json('Contact Admin')
+        res.sendStatus(500).json('We fudged up!')
     }
 })
 
