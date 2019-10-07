@@ -18,7 +18,7 @@ class Login extends React.Component<ILoginProps, ILoginState> {
             let result = await json('/auth/login', 'POST', this.state);
             SetAccessToken(result.token, { userid: result.token, role: result.role })
             if(result.role === 'admin') {
-                this.props.history.push('/');
+                this.props.history.push(`/profile/${this.props.match.params.userid}`)
             } else {
                 this.props.history.push('/register')
             }
@@ -42,7 +42,7 @@ class Login extends React.Component<ILoginProps, ILoginState> {
     }
 }
 
-export interface ILoginProps extends RouteComponentProps { }
+export interface ILoginProps extends RouteComponentProps<{userid: string}> { }
 
 export interface ILoginState {
     email: string,

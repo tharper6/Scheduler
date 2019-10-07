@@ -19,7 +19,7 @@ class App extends React.Component<IAppProps> {
                     <Route exact path='/' component={Home} />
                     <Route exact path='/login' component={Login} />
                     <Route exact path='/register' component={Register} />
-                    <Route exact path='/profile/:userid' component={Profile} />
+                    <Route path='/profile/:userid' component={Profile} />
                     {/* <Route exact path='/calendar' component={Calendar} /> */}
                 </Switch>
             </Router>

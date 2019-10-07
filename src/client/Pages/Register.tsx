@@ -27,9 +27,9 @@ class Register extends React.Component<IRegisterProps, IRegisterState> {
                     "Content-type": "application/json"
                 },
                 body: JSON.stringify(newUser)
-            });
-            if(result.ok) {
-                console.log(result)
+            }).then((res) => res.json()).then((data) => data);
+            if(result) {
+                this.props.history.push(`/profile/${result.userid}`);
             }
             // let result = await json('/auth/register', 'POST', newUser);
             // trying to figure out setaccesstokens

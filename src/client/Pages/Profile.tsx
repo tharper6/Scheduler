@@ -1,32 +1,39 @@
 import * as React from 'react';
-import {useState, useEffect} from 'react';
-import { RouteComponentProps } from 'react-router';
 import {json} from '../Utils/api'
+import { RouteComponentProps, withRouter } from 'react-router';
+import { IUser } from '../Utils/interfaces';
+import UserCard from '../Components/UserCard';
 
-const Profile: React.SFC<IProfileProps> = (props) => {
+class Profile extends React.Component<IProfileProps, IProfileState> {
 
-    const [user, setUser] = useState();
-
-    const getUser = async () => {
-        let result = await json(`/api/users/${props.match.params.userid}`);
-        // console.log(result)
-        setUser(result);
-        // console.log(user)
+    constructor(props: IProfileProps) {
+        super(props);
+        this.state = {
+            user: []
+        };
     }
 
-    useEffect(() => {
-        getUser();
-    }, [])
+    async componentDidMount() {
+        let result = await json(`/api/users/${this.props.match.params.userid}`);
+        // console.log(result)
+        this.setState({ user: result })
+    }
 
-    return(
-        <>
-        <h1>Profile</h1>
-        <p>{user.name}</p>
-        </>
-    )
+    render() {
+        if (!this.state.user.length) return null;
+        const user = this.state.user[0]
+        return (
+            <main className="container my-5">
+                <UserCard user={this.state.user} />
+            </main>
+        )
+    }
 }
 
-export interface IProfileProps extends RouteComponentProps<{userid: string}>{}
+export interface IProfileProps extends RouteComponentProps<{userid: string}> { }
 
-export default Profile;
+export interface IProfileState {
+    user: IUser []
+}
 
+export default withRouter(Profile);
