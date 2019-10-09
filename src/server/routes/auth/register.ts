@@ -10,7 +10,7 @@ router.post('/', async(req, res) => {
     try {
         let newUser = {...req.body};
         newUser.password = HashPassword(req.body.password);
-        let result: any = await db.users.insert(newUser.email, newUser.password, newUser.name)
+        let result: any = await db.users.insert(newUser.email, newUser.password, newUser.name, newUser.trainingrole, newUser.sportid)
         let token = await CreateToken({ userid: result.insertId });
         res.json({
             token,

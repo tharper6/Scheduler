@@ -13,14 +13,20 @@ router.get('/:id', async(req, res, next) => {
     res.json(users);
 });
 
-router.put('/:id', async(req, res) => {
-    try {
-        let user = await db.users.addSportTrainingRole(req.body.sportid, req.body.trainingrole, req.params.id);
-        res.json(user)
-    } catch (error) {
-        console.log(error);
-        res.status(500).json('Contact Admin')
-    }
-})
+// router.get('/:trainingrole', async (req, res, next) => {
+//     console.log(req.params)
+//     let trainers = await db.users.findTrainers(req.params.trainingrole);
+//     res.json(trainers);
+// })
+
+// router.put('/:id', async(req, res) => {
+//     try {
+//         let user = await db.users.addSportTrainingRole(req.body.sportid, req.body.trainingrole, req.params.id);
+//         res.json(user)
+//     } catch (error) {
+//         console.log(error);
+//         res.status(500).json('Contact Admin')
+//     }
+// })
 
 export default router;

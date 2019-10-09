@@ -5,6 +5,7 @@ import NavBar from './Components/NavBar';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import Profile from './Pages/Profile';
+import Trainers from './Pages/Trainers';
 // import Calendar from './Pages/Calendar';
 
 
@@ -20,6 +21,7 @@ class App extends React.Component<IAppProps> {
                     <Route exact path='/login' component={Login} />
                     <Route exact path='/register' component={Register} />
                     <Route path='/profile/:userid' component={Profile} />
+                    <Route path='/trainers' component={Trainers} />                    
                     {/* <Route exact path='/calendar' component={Calendar} /> */}
                 </Switch>
             </Router>

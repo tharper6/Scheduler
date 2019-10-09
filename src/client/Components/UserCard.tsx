@@ -2,6 +2,8 @@ import * as React from 'react';
 import { IUser, ISport } from '../Utils/interfaces';
 import {json} from '../Utils/api'
 import { RouteComponentProps, withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
+import { userInfo } from 'os';
 
 class UserCard extends React.Component<IUserCardProps, IUserCardState> {
 
@@ -10,7 +12,8 @@ class UserCard extends React.Component<IUserCardProps, IUserCardState> {
         this.state = {
             sports: [],
             selectedRole: '',
-            selectedSport: "0"
+            selectedSport: "0",
+            hideTool: false
         };
     }
 
@@ -32,6 +35,15 @@ class UserCard extends React.Component<IUserCardProps, IUserCardState> {
         }
     }
 
+    trainerbutton () {
+        let [user] = this.props.user
+        if (user.trainingrole === 'trainer') {
+            return <Link to="/trainees">Go to Trainees</Link>
+        } else {
+            return <Link to="/trainers">Go To Trainers</Link>
+        }
+    }
+
     render() {
         let [user] = this.props.user
         return(
@@ -42,10 +54,13 @@ class UserCard extends React.Component<IUserCardProps, IUserCardState> {
                     <br/>
                     <h3 className="text-center">{user.name}</h3>
                     <h5 className="text-center"> {user.email}</h5>
+                    <p>{user.trainingrole}</p>
+                    <p>{user.sportid}</p>
+                    {this.trainerbutton()}
                 </div>
             </section>
             <hr className="text-dark"/>
-            <section className="row justify-content-center shadow mt-2">
+            {/* <section className="row justify-content-center shadow mt-2">
                 <div className="col-md-8 my-2">
                 <form className="form-group">
                     <label>Role:</label>
@@ -59,14 +74,14 @@ class UserCard extends React.Component<IUserCardProps, IUserCardState> {
                         <option>Please Select a Sport...</option>
                         {this.state.sports.map(sport => {
                             return(
-                                <option value={sport.id}>{sport.sportname}</option>
+                                <option value={sport.sportname}>{sport.sportname}</option>
                             )
                         })}
                     </select>
                     <button onClick={(e: React.MouseEvent<HTMLButtonElement>) => this.handleAdd(e)}>Add!</button>
                 </form>
                 </div>
-            </section>
+            </section> */}
             </>
         )
     }
@@ -80,7 +95,8 @@ export interface IUserCardProps extends RouteComponentProps<{userid: string}> {
 export interface IUserCardState {
     sports: ISport[],
     selectedRole: string,
-    selectedSport: string
+    selectedSport: string,
+    hideTool: boolean
 }
 
 export default withRouter(UserCard);

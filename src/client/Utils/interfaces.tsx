@@ -9,5 +9,6 @@ export interface IUser {
     email: string,
     password: string,
     sportid: string,
-    role: string
+    role: string,
+    trainingrole: string
 }
