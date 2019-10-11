@@ -15,9 +15,11 @@ export const Query = (query: string, values?: any) => {
 import users from './queries/users';
 import tokens from './queries/tokens';
 import sports from './queries/sports';
+import sessions from './queries/sessions';
 
 export default{
     users,
     tokens,
-    sports
+    sports,
+    sessions
 }

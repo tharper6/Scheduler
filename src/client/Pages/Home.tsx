@@ -12,6 +12,7 @@ class Home extends React.Component<IHomeProps, IHomeState> {
 
     render() {
         return (
+            <>
             <div className="jumbotron jumbotron-fluid body">
                 <div className="container-fluid">
                     <h1 className="display-4 text-center">Pro Trainers</h1>
@@ -22,7 +23,27 @@ class Home extends React.Component<IHomeProps, IHomeState> {
                     </div>
                 </div>
             </div>
-            
+                        <section className="row justify-content-center text-center">
+                            <div className="card col-md-8 my-2 p-2">
+                                <div className="card-body">
+                                    <h1>Step 1: Register</h1>
+                                    <Link className="btn btn-dark rounded col-md-4" to="/register">Register</Link>
+                                </div>
+                            </div>
+                            <div className="card col-md-8 my-2 p-2">
+                                <div className="card-body">
+                                    <h1>Step 2: Check Out Our Trainers</h1>
+                                    <Link className="btn btn-dark rounded col-md-4" to="/trainers">Trainers!</Link>
+                                </div>
+                            </div>
+                            <div className="card col-md-8 my-2 p-2">
+                                <div className="card-body">
+                                    <h1>Step 3: Schedule Session</h1>
+                                    <Link className="btn btn-dark rounded col-md-4" to="/sessions">Schedule Session!</Link>
+                                </div>
+                            </div>
+                        </section>
+            </>
         )
     }
 }

@@ -16,20 +16,26 @@ const Trainees: React.SFC<ITraineesProps> = (props) => {
         getTrainees();
     }, [])
 
-    return(
+    return (
         <>
-        <h1>Trainees</h1>
-        <div>
-            {trainees.map(trainee => {
-            return(
-                <>
-                <p>{trainee.name}</p>
-                <p>{trainee.email}</p>
-                <p>{trainee.sportname}</p>
-                </>
-            )
-        })}
-        </div>
+            <h1>Trainees</h1>
+            <div>
+                {trainees.map(trainee => {
+                    return (
+                        <>
+                            <section className="row justify-content-center">
+                                <div className="card col-md-8 m-2 rounded ">
+                                    <div className="card-body text-center">
+                                        <p>{trainee.name}</p>
+                                        <p>{trainee.email}</p>
+                                        <p>{trainee.sportname}</p>
+                                    </div>
+                                </div>
+                            </section>
+                        </>
+                    )
+                })}
+            </div>
         </>
     )
 };

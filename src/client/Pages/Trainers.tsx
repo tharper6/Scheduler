@@ -18,9 +18,6 @@ const Trainers: React.SFC<TrainersProps> = (props) => {
         getTrainers();
     }, []);
 
-    
-
-
     return (
         <>
             <p>Trainers</p>

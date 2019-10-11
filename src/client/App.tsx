@@ -8,6 +8,7 @@ import Profile from './Pages/Profile';
 import Trainers from './Pages/Trainers';
 import Trainees from './Pages/Trainees';
 import Schedule from './Pages/Schedule';
+import Sessions from './Pages/Sessions';
 // import Calendar from './Pages/Calendar';
 
 
@@ -25,7 +26,8 @@ class App extends React.Component<IAppProps> {
                     <Route path='/profile/:userid' component={Profile} />
                     <Route path='/trainers' component={Trainers} />      
                     <Route path='/trainees' component={Trainees} />
-                    <Route path='/schedule/:id' component={Schedule} />                    
+                    <Route path='/schedule/:id' component={Schedule} />   
+                    <Route path='/sessions' component={Sessions} />                    
                     {/* <Route exact path='/calendar' component={Calendar} /> */}
                 </Switch>
             </Router>
