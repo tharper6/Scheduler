@@ -36,7 +36,8 @@ const Trainers: React.SFC<TrainersProps> = (props) => {
                         </section>
                     </>
                 )
-            })} </div>
+            })}
+            </div>
         </>
     )
 }

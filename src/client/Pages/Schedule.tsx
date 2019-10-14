@@ -11,7 +11,7 @@ const Schedule: React.SFC<ScheduleProps> = (props) => {
     let [date, setdate] = useState<Date>(new Date());
     let [sports, setSports] = useState <ISport[]>([]);
     let [name, setName] = useState('');
-    let [sport, setSport] = useState('0');
+    let [sportid, setSportid] = useState('0');
     let [summary, setSummary] = useState('');
 
     const getSports = async () => {
@@ -30,10 +30,8 @@ const Schedule: React.SFC<ScheduleProps> = (props) => {
     const schedule = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         try {
-            console.log(date)
-            let result = await json('/api/sessions', 'POST', {name, sport, summary, date});
-            
-            
+            let result = await json('/api/sessions', 'POST', {name, sportid, summary, date}).then((res) => res.json()).then((data) => data);
+            // props.history.push(`/profile/${result.userid}`)
         } catch (error) {
             console.log(error);
             throw error
@@ -43,13 +41,13 @@ const Schedule: React.SFC<ScheduleProps> = (props) => {
 
     return(
         <>
-            <section className="row justify-content-center my-3">
+            <section className="row justify-content-center my-3 mt-5">
                 <div className="col-md-6">
                     <form className="bg-white form-group border border-dark rounded p-2 font-weight-bolder">
                         <label className="">Name:</label>
                         <input value={name} onChange={(e: React.ChangeEvent<HTMLInputElement>) => {setName(e.target.value)}} type="text" className="form-control p-2" />
                         <label className="pt-1">Sport:</label>
-                        <select value={sport} onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {setSport(e.target.value)}} className="form-control p-2">
+                        <select value={sportid} onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {setSportid(e.target.value)}} className="form-control p-2">
                             <option value="default align-text-bottom">Please Select a Sport...</option>
                             {sports.map(sport => {
                                 return (

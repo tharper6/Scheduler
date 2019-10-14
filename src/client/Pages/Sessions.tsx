@@ -1,20 +1,17 @@
-import * as React from 'react';
-import {useState, useEffect,} from 'react';
-import {json} from '../Utils/api';
-import {ITrainer} from '../Utils/interfaces'
-import {Link, RouteComponentProps} from 'react-router-dom'
+// import * as React from 'react';
+// import {useState, useEffect} from 'react';
 
-const Sessions: React.SFC<SessionsProps> = (props) => {
+// const Sessions: React.SFC<SessionsProps> = (props) => {
 
-    
-    return (
-        <>
-           <h1>sessions</h1>
-        </>
-    )
-}
+//     getSessions = async () => {
+        
+//     }
 
-export interface SessionsProps extends RouteComponentProps<{userid: string}> {
-}
+//     return(
+//         <h1>Sessions</h1>
+//     )
+// }
 
-export default Sessions;
+// export interface SessionsProps {}
+
+// export default Sessions;

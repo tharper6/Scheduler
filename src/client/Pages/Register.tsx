@@ -42,15 +42,6 @@ class Register extends React.Component<IRegisterProps, IRegisterState> {
             if(result) {
                 this.props.history.push(`/profile/${result.userid}`);
             }
-            // let result = await json('/auth/register', 'POST', newUser);
-            // trying to figure out setaccesstokens
-            // SetAccessToken(result.token, {userid: result.userid, role: result.role});
-            // this.props.history.push(`/profile/${result.userid}`)
-            // if(this.state.role === 'trainer') {
-            //     this.props.history.push('/trainees/home')
-            // } else {
-            //     this.props.history.push('/trainers/home')
-            // }
         } catch (error) {
             console.log(error)
         }

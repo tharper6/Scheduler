@@ -11,12 +11,26 @@ class UserCard extends React.Component<IUserCardProps> {
         super(props);
     }
 
-    trainerbutton () {
+    // trainerbutton () {
+    //     let [user] = this.props.user
+    //     if (user.trainingrole === 'trainer') {
+    //         return <Link to="/trainees">Go to Trainees</Link>
+    //     } else {
+    //         return <Link to="/trainers">Go To Trainers</Link>
+    //     }
+    // }
+
+    sessionButton () {
         let [user] = this.props.user
         if (user.trainingrole === 'trainer') {
-            return <Link to="/trainees">Go to Trainees</Link>
+            return (
+                <>
+                <Link to="/sessions">Go To Sessions</Link>
+                <Link to='/addsession'>Add Session</Link>
+                </>
+            ) 
         } else {
-            return <Link to="/trainers">Go To Trainers</Link>
+            return <Link to="/sessions">Go To Sessions</Link>                
         }
     }
 
@@ -32,7 +46,8 @@ class UserCard extends React.Component<IUserCardProps> {
                     <h5 className="text-center"> {user.email}</h5>
                     <p>{user.trainingrole}</p>
                     <p>{user.sportid}</p>
-                    {this.trainerbutton()}
+                    {this.sessionButton()}
+                    {/* {this.trainerbutton()} */}
                 </div>
             </section>
             <hr className="text-dark"/>
