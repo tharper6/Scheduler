@@ -29,7 +29,7 @@ class Home extends React.Component<IHomeProps, IHomeState> {
             <hr/>
             <section className="">
             <div className="row justify-content-center">
-                <a href="/register"><h1 className="text-dark">Step 1: Register!</h1></a>
+                <a href="/register"><h4 className="text-dark">Step 1: Register!</h4></a>
             </div>
             <div className="row justify-content-center">
             <p><i className="text-center" style={down}></i></p>
@@ -41,7 +41,7 @@ class Home extends React.Component<IHomeProps, IHomeState> {
             <p><i className="text-center" style={down}></i></p>
             </div>
             <div className="row justify-content-center">
-            <a href="/trainers"><h1 className="text-dark">Step 2: Check Out Our Trainers!</h1></a>
+            <a href="/trainers"><h4 className="text-dark">Step 2: Check Out Our Trainers!</h4></a>
             </div>
             <div className="row justify-content-center">
             <p><i className="text-center" style={down}></i></p>
@@ -53,7 +53,7 @@ class Home extends React.Component<IHomeProps, IHomeState> {
             <p><i className="text-center" style={down}></i></p>
             </div>
             <div className="row justify-content-center">
-            <a href="/schedule"><h1 className="text-dark">Step 3: Schedule A Session!</h1></a>
+            <a href="/schedule"><h4 className="text-dark">Step 3: Schedule A Session!</h4></a>
             </div>
             </section>
 
