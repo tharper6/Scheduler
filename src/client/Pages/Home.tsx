@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import {TiArrowDownThick} from 'react-icons/ti'
 
 class Home extends React.Component<IHomeProps, IHomeState> {
 
@@ -32,31 +33,19 @@ class Home extends React.Component<IHomeProps, IHomeState> {
                 <a href="/register"><h4 className="text-dark">Step 1: Register!</h4></a>
             </div>
             <div className="row justify-content-center">
-            <p><i className="text-center" style={down}></i></p>
-            </div>
-            <div className="row justify-content-center">
-            <p><i className="text-center" style={down}></i></p>
-            </div>
-            <div className="row justify-content-center">
-            <p><i className="text-center" style={down}></i></p>
+                <TiArrowDownThick size={50} style={{ marginLeft: '0%' }} />
             </div>
             <div className="row justify-content-center">
             <a href="/trainers"><h4 className="text-dark">Step 2: Check Out Our Trainers!</h4></a>
             </div>
             <div className="row justify-content-center">
-            <p><i className="text-center" style={down}></i></p>
+                <TiArrowDownThick size={50} style={{ marginLeft: '0%' }} />
             </div>
-            <div className="row justify-content-center">
-            <p><i className="text-center" style={down}></i></p>
-            </div>
-            <div className="row justify-content-center">
-            <p><i className="text-center" style={down}></i></p>
-            </div>
-            <div className="row justify-content-center">
+            <div className="row justify-content-center mb-2">
             <a href="/schedule"><h4 className="text-dark">Step 3: Schedule A Session!</h4></a>
             </div>
             </section>
-
+            
                         {/* <section className="row justify-content-center text-center">
                             <div className="card col-md-8 my-2 p-2 mt-3">
                                 <div className="card-body">

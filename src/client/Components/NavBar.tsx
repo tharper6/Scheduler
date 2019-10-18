@@ -12,7 +12,7 @@ const NavBar: React.SFC<NavBarProps> = (props) => {
 
     return (
         <nav className="bg-dark navbar shadow text-white rounded row justify-content-around fixed-top">
-            {/* <Link className="text-white rounded" to={`/profile/${User.userid}`}>Profile</Link> */}
+            <Link className="text-white rounded" to={`/profile/${User.userid}`}>Profile</Link>
             <Link className="text-white rounded" to='/'>Home</Link>
             <Link className="text-white rounded" to='/login'>Login</Link>
             {/* <Link className="text-white rounded" to='/'>Logout</Link> */}

@@ -8,9 +8,8 @@ import Profile from './Pages/Profile';
 import Trainers from './Pages/Trainers';
 import Trainees from './Pages/Trainees';
 import Schedule from './Pages/Schedule';
-// import Sessions from './Pages/Sessions';
-// import AddSession from './Pages/AddSession';
-// import Calendar from './Pages/Calendar';
+import TrainerBio from './Pages/TrainerBio';
+
 
 
 class App extends React.Component<IAppProps> {
@@ -24,13 +23,11 @@ class App extends React.Component<IAppProps> {
                     <Route exact path='/' component={Home} />
                     <Route exact path='/login' component={Login} />
                     <Route exact path='/register' component={Register} />
-                    <Route path='/profile/:userid' component={Profile} />
-                    <Route path='/trainers' component={Trainers} />      
-                    <Route path='/trainees' component={Trainees} />
-                    <Route path='/schedule/' component={Schedule} /> 
-                    {/* <Route path='/sessions' component={Sessions} />  */}
-                    {/* <Route path='/addsession' component={AddSession} />    */}
-                    {/* <Route exact path='/calendar' component={Calendar} /> */}
+                    <Route exact path='/profile/:userid' component={Profile} />
+                    <Route exact path='/trainers' component={Trainers} />      
+                    <Route exact path='/trainees' component={Trainees} />
+                    <Route exact path='/schedule' component={Schedule} /> 
+                    <Route exact path='/profile/bio/:userid' component={TrainerBio} /> 
                 </Switch>
             </Router>
             </>

@@ -3,8 +3,7 @@ import { IUser, ISport, ISession } from '../Utils/interfaces';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 import * as moment from 'moment'
-import { Calendar } from 'react-calendar/dist/entry';
-// import SessionsCard from './SessionsCard';
+import { User } from '../Utils/api';
 
 class UserCard extends React.Component<IUserCardProps> {
 
@@ -14,7 +13,13 @@ class UserCard extends React.Component<IUserCardProps> {
 
     trainerbutton() {
         if (this.props.user.trainingrole === 'trainer') {
-            return <Link className="btn btn-dark" to="/trainees">Go to Trainees</Link>
+            return (
+                <>
+                <Link className="btn btn-dark mr-3" to="/trainees">Go to Trainees</Link>
+                <Link className="btn btn-dark ml-3" to={`/profile/bio/${User.userid}`}>Add/Update Bio</Link>
+                </> 
+            )
+            
         } else {
             return <Link className="btn btn-dark" to="/trainers">Go To Trainers</Link>
         }
@@ -38,10 +43,8 @@ class UserCard extends React.Component<IUserCardProps> {
     combineDateTime(date: any, time: any) {
         let modifiedDate = date.split('T');
         modifiedDate.pop();
-
         let modifiedTime = time + ':00';
         modifiedDate.push(modifiedTime);
-
         let desiredFormat = modifiedDate.join('T');
         return desiredFormat;
     }
@@ -56,7 +59,7 @@ class UserCard extends React.Component<IUserCardProps> {
                         <div className="col-md-3 h-50 text-center ml-5 mt-3">
                             <img style={{ maxWidth: '100%', height: 'auto' }} className="border rounded-circle pt-3" src={this.props.user.avatar} alt="" />
                         </div>
-                        <div className="col-md-6 mt-3 text-center ml-5">
+                        <div className="col-md-6 mt-5 text-center ml-5">
                             <h2 className="" >{this.props.user.username}</h2>
                             <h5 className="" >{this.props.user.email}</h5>
                             <h5 className="" >{this.props.user.trainingrole}</h5>
@@ -66,7 +69,7 @@ class UserCard extends React.Component<IUserCardProps> {
                 </div>
                 <div className="row justify-content-center mt-4">
                     {this.trainerbutton()}
-                    <button className="btn btn-dark mx-5" onClick={() => this.logoutbutton()} >Logout</button>
+                    <button className="btn btn-dark ml-4" onClick={() => this.logoutbutton()} >Logout</button>
                 </div>
                 <hr className="text-dark" />
                 <section>

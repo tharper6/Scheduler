@@ -15,6 +15,17 @@ export interface IUser {
     avatar: string
 }
 
+export interface IUser2 {
+    id: number,
+    username: string,
+    email: string,
+    role: string,
+    trainingrole: string,
+    bio: string,
+    avatar: string,
+    sportname: string
+}
+
 export interface ITrainer {
     id: number,
     username: string,
