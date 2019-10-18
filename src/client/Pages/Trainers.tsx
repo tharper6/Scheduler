@@ -3,6 +3,7 @@ import {useState, useEffect,} from 'react';
 import {json} from '../Utils/api';
 import {ITrainer} from '../Utils/interfaces'
 import {Link, RouteComponentProps} from 'react-router-dom'
+import {User} from '../Utils/api'
 
 const Trainers: React.SFC<TrainersProps> = (props) => {
 
@@ -11,30 +12,38 @@ const Trainers: React.SFC<TrainersProps> = (props) => {
     const getTrainers = async () => {
         let trainers = await json('/api/trainingrole/trainer');
         setTrainers(trainers);
-        console.log(trainers)
     }
 
     useEffect(() => {
         getTrainers();
     }, []);
 
+    const sessionBtn =() => {
+        props.history.push(`/schedule`);
+    }
+
     return (
         <>
-            <p>Trainers</p>
+            <h1 className="text-center font-bold py-3 mt-4">Professional Trainers</h1>
             <div> {trainers.map(trainer => {
                 return (
-                    <>
+                    <div key={trainer.id}>
                         <section className="row justify-content-center">
-                            <div className="card col-md-8">
-                                <div className="card-body text-center">
-                                    <p>{trainer.name}</p>
+                            <article className="col-md-10">
+                            <div className="card m-2 rounded shadow">
+                                <div className="card-body text-center pt-0">
+                                <img src={trainer.avatar} alt="user avatar" style={{ height: '150px', width: '150px' }} className="mt-2 ml-1" />
+                                    <p>{trainer.username}</p>
                                     <p>{trainer.email}</p>
                                     <p>{trainer.sportname}</p>
-                                    <Link className="btn btn-dark col-md-12" to={`/schedule/${trainer.id}`}>Schedule Session</Link>
+                                    <p>{trainer.bio}</p>
+                                    {/* <Link className="btn btn-dark col-md-12" to={`/schedule/${trainer.id}`}>Schedule Session</Link> */}
+                                    <button className="btn btn-dark col-md-12" onClick={(e: React.MouseEvent<HTMLButtonElement>) => sessionBtn()} >Schedule Session!</button>
                                 </div>
                             </div>
+                            </article>
                         </section>
-                    </>
+                    </div>
                 )
             })}
             </div>

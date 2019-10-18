@@ -26,7 +26,7 @@ const Trainees: React.SFC<ITraineesProps> = (props) => {
                             <section className="row justify-content-center">
                                 <div className="card col-md-8 m-2 rounded ">
                                     <div className="card-body text-center">
-                                        <p>{trainee.name}</p>
+                                        <p>{trainee.username}</p>
                                         <p>{trainee.email}</p>
                                         <p>{trainee.sportname}</p>
                                     </div>

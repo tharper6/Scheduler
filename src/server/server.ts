@@ -26,3 +26,9 @@ app.get('*', (req, res) => {
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server listening on port: ${port}`));
+
+
+// api/user/1
+// api/sessions/2
+// delete button/ edit for events.
+// about page/ contact

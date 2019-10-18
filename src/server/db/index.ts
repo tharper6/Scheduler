@@ -16,10 +16,12 @@ import users from './queries/users';
 import tokens from './queries/tokens';
 import sports from './queries/sports';
 import sessions from './queries/sessions';
+import trainers from './queries/trainers'
 
 export default{
     users,
     tokens,
     sports,
-    sessions
+    sessions,
+    trainers
 }

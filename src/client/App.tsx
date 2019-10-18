@@ -27,7 +27,7 @@ class App extends React.Component<IAppProps> {
                     <Route path='/profile/:userid' component={Profile} />
                     <Route path='/trainers' component={Trainers} />      
                     <Route path='/trainees' component={Trainees} />
-                    <Route path='/schedule/:id' component={Schedule} /> 
+                    <Route path='/schedule/' component={Schedule} /> 
                     {/* <Route path='/sessions' component={Sessions} />  */}
                     {/* <Route path='/addsession' component={AddSession} />    */}
                     {/* <Route exact path='/calendar' component={Calendar} /> */}

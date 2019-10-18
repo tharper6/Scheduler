@@ -5,19 +5,45 @@ export interface ISport {
 
 export interface IUser {
     id: number,
-    name: string,
+    username: string,
     email: string,
     password: string,
     sportid: string,
     role: string,
-    trainingrole: string
+    trainingrole: string,
+    sportname: string,
+    avatar: string
 }
 
 export interface ITrainer {
     id: number,
-    name: string,
+    username: string,
     email: string,
     sportid: number,
     trainingrole: string,
+    sportname: string,
+    bio: string,
+    avatar: string
+}
+
+export interface ITrainer2 {
+    id: number,
+    username: string,
+    email: string,
+    role: string,
+    trainingrole: string,
     sportname: string
+}
+
+export interface ISession {
+    id: number,
+    name: string,
+    summary: string,
+    date: Date,
+    trainerid: number,
+    traineeid: number,
+    time: string,
+    sportname: string,
+    trainer_name: string,
+    trainee_name: string
 }

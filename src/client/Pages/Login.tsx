@@ -16,7 +16,7 @@ class Login extends React.Component<ILoginProps, ILoginState> {
         e.preventDefault();
         try {
             let result = await json('/auth/login', 'POST', this.state);
-            SetAccessToken(result.token, { userid: result.token, role: result.role })
+            SetAccessToken(result.token, { userid: result.userid, role: result.role })
             if(result.role === 'admin') {
                 this.props.history.push(`/profile/${result.userid}`)
             } else {
@@ -34,7 +34,8 @@ class Login extends React.Component<ILoginProps, ILoginState> {
                     <label>Email:</label>
                     <input value={this.state.email} onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ email: e.target.value })} className="form-control" type="text"/>
                     <label>Password:</label>
-                    <input value={this.state.password} onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ password: e.target.value })} className="form-control" type="text"/>
+                    <input value={this.state.password} onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ password: e.target.value })} className="form-control" type="password"/>
+                    <h6 className="mt-2">Don't have an account with us? <a href="/register">Register Here!</a></h6>
                     <button className="btn btn-dark form-control mt-2" onClick={(e: React.MouseEvent<HTMLButtonElement>) => this.handleLogin(e)} >Login!</button>
                 </form>
             </main>

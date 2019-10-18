@@ -8,7 +8,7 @@ class Register extends React.Component<IRegisterProps, IRegisterState> {
     constructor(props: IRegisterProps) {
         super(props);
         this.state = {
-            name: '',
+            username: '',
             email: '',
             password: '',
             trainingRole: '',
@@ -25,7 +25,7 @@ class Register extends React.Component<IRegisterProps, IRegisterState> {
     async handleRegister(e: any) {
         e.preventDefault();
         let newUser = {
-            name: this.state.name,
+            username: this.state.username,
             email: this.state.email,
             password: this.state.password,
             trainingrole: this.state.trainingRole,
@@ -50,13 +50,14 @@ class Register extends React.Component<IRegisterProps, IRegisterState> {
     render() {
         return (
             <main className="container my-5">
+                <h1 className="row justify-content-center">Registration</h1>
                 <form className=" bg-white form-group border border-dark rounded p-2">
                     <label>Name:</label>
-                    <input value={this.state.name} onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ name: e.target.value })} className="form-control" type="text" />
+                    <input value={this.state.username} onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ username: e.target.value })} className="form-control" type="text" />
                     <label>Email:</label>
                     <input value={this.state.email} onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ email: e.target.value })} className="form-control" type="text" />
                     <label>Password:</label>
-                    <input value={this.state.password} onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ password: e.target.value })} className="form-control" type="text" />
+                    <input value={this.state.password} onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ password: e.target.value })} className="form-control" type="password" />
                     <label>Role:</label>
                     <select className="form-control" value={this.state.trainingRole} onChange={(e: React.ChangeEvent<HTMLSelectElement>) => this.setState({ trainingRole: e.target.value })}>
                         <option value="default">Please Select a Role...</option>
@@ -72,7 +73,7 @@ class Register extends React.Component<IRegisterProps, IRegisterState> {
                             )
                         })}
                     </select>
-                    <button onClick={(e: React.MouseEvent<HTMLButtonElement>) => this.handleRegister(e)} className="btn btn-dark rounded my-2 form-control">Register!</button>
+                    <button onClick={(e: React.MouseEvent<HTMLButtonElement>) => this.handleRegister(e)} className="btn btn-dark rounded my-2 form-control text-bolder">Register!</button>
                 </form>
             </main>
         )
@@ -82,7 +83,7 @@ class Register extends React.Component<IRegisterProps, IRegisterState> {
 export interface IRegisterProps extends RouteComponentProps<{userid: string}> { }
 
 export interface IRegisterState {
-    name: string,
+    username: string,
     email: string,
     password: string,
     trainingRole: string,
