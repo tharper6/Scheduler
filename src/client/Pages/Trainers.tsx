@@ -38,7 +38,6 @@ const Trainers: React.SFC<TrainersProps> = (props) => {
                                     <p>{trainer.sportname}</p>
                                     <p>{trainer.bio}</p>
                                     <Link className="btn btn-dark col-md-12" to={`/schedule/${trainer.id}`}>Schedule Session</Link>
-                                    {/* <button className="btn btn-dark col-md-12" onClick={(e: React.MouseEvent<HTMLButtonElement>) => sessionBtn()} >Schedule Session!</button> */}
                                 </div>
                             </div>
                             </article>
@@ -54,6 +53,5 @@ const Trainers: React.SFC<TrainersProps> = (props) => {
 export interface TrainersProps extends RouteComponentProps<{userid: string}> {
     trainers: ITrainer[]
 }
-//https://cdn1.iconfinder.com/data/icons/flat-business-icons/128/user-256.png
-//'https://i.ibb.co/gP9Cf0W/imageedit-1-7778775978.jpg'
+
 export default Trainers;

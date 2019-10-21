@@ -15,7 +15,6 @@ const NavBar: React.SFC<NavBarProps> = (props) => {
             <Link className="text-white rounded" to={`/profile/${User.userid}`}>Profile</Link>
             <Link className="text-white rounded" to='/'>Home</Link>
             <Link className="text-white rounded" to='/login'>Login</Link>
-            {/* <Link className="text-white rounded" to='/'>Logout</Link> */}
             <button onClick={logoutbutton} className="text-white" style={button} >Logout</button>
         </nav>
     )

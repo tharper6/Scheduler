@@ -8,16 +8,6 @@ import { Link } from 'react-router-dom';
 const TrainerBio: React.SFC<TrainerBioProps> = (props) => {
 
     const [bio, setbio] = useState('');
-    // const [user, setuser] = useState({
-    //     id: 0,
-    //     username: '',
-    //     email: '',
-    //     role: '',
-    //     trainingrole: '',
-    //     bio: '',
-    //     avatar: '',
-    //     sportname: ''
-    // });
 
     const getBio = async () => {
         let result = await json(`/api/users/${User.userid}`);
@@ -54,12 +44,10 @@ const TrainerBio: React.SFC<TrainerBioProps> = (props) => {
                 <h3 className="text-center">Biography:</h3>
                 <textarea value={bio} onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setbio(e.target.value)} className="form-control" rows={10}></textarea>
                 <div className="row justify-content-around">
-                {/* <div className="d-inline col-md-12"> */}
                 <button onClick={addBio} className="col-md-3 mt-2 btn btn-dark">Add Bio!</button>
                 <button onClick={updateBio} className="col-md-3 mt-2 btn btn-dark">Update Bio!</button>
                 <Link className="btn btn-dark col-md-3 mt-2 rounded" to={`/profile/${User.userid}`}>Back To Profile!</Link>
                 </div>
-                {/* </div> */}
             </form>
         </main>
         </>

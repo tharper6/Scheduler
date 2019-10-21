@@ -44,29 +44,7 @@ class Home extends React.Component<IHomeProps, IHomeState> {
             <div className="row justify-content-center mb-2">
             <a href="/schedule"><h4 className="text-dark">Step 3: Schedule A Session!</h4></a>
             </div>
-            <img src="https://cdn1.iconfinder.com/data/icons/project-management-8/500/worker-256.png" alt=""/>
             </section>
-            
-                        {/* <section className="row justify-content-center text-center">
-                            <div className="card col-md-8 my-2 p-2 mt-3">
-                                <div className="card-body">
-                                    <h1>Step 1: Register</h1>
-                                    <Link className="btn btn-dark rounded col-md-4 text-dark" to="/register">Register</Link>
-                                </div>
-                            </div>
-                            <div className="card col-md-8 my-2 p-2">
-                                <div className="card-body">
-                                    <h1>Step 2: Check Out Our Trainers</h1>
-                                    <Link className="btn btn-dark rounded col-md-4 text-dark" to="/trainers">Trainers!</Link>
-                                </div>
-                            </div>
-                            <div className="card col-md-8 my-2 p-2">
-                                <div className="card-body">
-                                    <h1>Step 3: Schedule Session</h1>
-                                    <Link className="btn btn-dark rounded col-md-4 text-dark" to="/sessions">Schedule Session!</Link>
-                                </div>
-                            </div>
-                        </section> */}
             </>
         )
     }
@@ -77,8 +55,6 @@ const down = {
     borderWidth: 3,
     display: 'block',
     padding: '3px',
-    // transform: 'rotate(45deg)',
-    // WebkitTransform: 'rotate (45deg)'
 }
 
 export interface IHomeProps { }

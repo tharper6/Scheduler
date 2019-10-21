@@ -44,7 +44,6 @@ class Profile extends React.Component<IProfileProps, IProfileState> {
 
     render() {
         this.isLogin();
-        // const user = this.state.user[0]
         return (
             <main className="container my-5">
                 <UserCard user={this.state.user} sessions={this.state.sessions}/>

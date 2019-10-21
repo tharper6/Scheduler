@@ -58,7 +58,6 @@ class UserCard extends React.Component<IUserCardProps> {
                     <div className="row flex-center text-center mr-5">
                         <br />
                         <div className="col-md-3 h-50 text-center ml-5 mt-3">
-                        {/* <IoIosContact size={200} /> */}
                             <img style={{ maxWidth: '100%', height: 'auto' }} className="border rounded-circle pt-3" src={this.props.user.avatar} alt="" />
                         </div>
                         <div className="col-md-6 mt-5 text-center ml-5">
@@ -96,7 +95,6 @@ class UserCard extends React.Component<IUserCardProps> {
                                                 {this.cards('Details', session.summary)}
                                                 {this.cards('Trainer', session.trainer_name)}
                                                 {this.cards('Trainee', session.trainee_name)}
-                                                {/* <SessionsCard session={this.props.sessions} user={this.props.user} /> */}
                                             </div>
                                         </div>
                                     </div>
