@@ -42,7 +42,7 @@ class Home extends React.Component<IHomeProps, IHomeState> {
                 <TiArrowDownThick size={50} style={{ marginLeft: '0%' }} />
             </div>
             <div className="row justify-content-center mb-2">
-            <a href="/schedule"><h4 className="text-dark">Step 3: Schedule A Session!</h4></a>
+            <h4 className="text-dark">Step 3: Schedule A Session!</h4>
             </div>
             </section>
             </>
