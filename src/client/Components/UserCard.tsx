@@ -4,6 +4,7 @@ import { RouteComponentProps, withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 import * as moment from 'moment'
 import { User } from '../Utils/api';
+import { IoIosContact } from "react-icons/io";
 
 class UserCard extends React.Component<IUserCardProps> {
 
@@ -57,6 +58,7 @@ class UserCard extends React.Component<IUserCardProps> {
                     <div className="row flex-center text-center mr-5">
                         <br />
                         <div className="col-md-3 h-50 text-center ml-5 mt-3">
+                        {/* <IoIosContact size={200} /> */}
                             <img style={{ maxWidth: '100%', height: 'auto' }} className="border rounded-circle pt-3" src={this.props.user.avatar} alt="" />
                         </div>
                         <div className="col-md-6 mt-5 text-center ml-5">
@@ -102,7 +104,6 @@ class UserCard extends React.Component<IUserCardProps> {
                             })}</div>
                         </div>
                     </div>
-
                 </section>
             </>
         )

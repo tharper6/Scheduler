@@ -23,15 +23,20 @@ const Trainees: React.SFC<ITraineesProps> = (props) => {
                 {trainees.map(trainee => {
                     return (
                         <>
-                            <section className="row justify-content-center">
-                                <div className="card col-md-8 m-2 rounded ">
-                                    <div className="card-body text-center">
-                                        <p>{trainee.username}</p>
-                                        <p>{trainee.email}</p>
-                                        <p>{trainee.sportname}</p>
-                                    </div>
+                           <div key={trainee.id}>
+                        <section className="row justify-content-center">
+                            <article className="col-md-10">
+                            <div className="card m-2 rounded shadow">
+                                <div className="card-body text-center pt-0">
+                                <img src={trainee.avatar} alt="user avatar" style={{ height: '150px', width: '150px' }} className="mt-2 ml-1 border rounded-circle" />
+                                    <p>{trainee.username}</p>
+                                    <p>{trainee.email}</p>
+                                    <p>{trainee.sportname}</p>
                                 </div>
-                            </section>
+                            </div>
+                            </article>
+                        </section>
+                    </div>
                         </>
                     )
                 })}

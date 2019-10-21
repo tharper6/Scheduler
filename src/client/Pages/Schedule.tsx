@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 import { Calendar } from 'react-calendar/dist/entry';
 import {json, User} from '../Utils/api'
 import { RouteComponentProps } from 'react-router';
-import { ISport, ITrainer2 } from '../Utils/interfaces';
+import { ISport, ITrainer2, IUser, IUser2 } from '../Utils/interfaces';
 
 
 const Schedule: React.SFC<ScheduleProps> = (props) => {
@@ -14,19 +14,50 @@ const Schedule: React.SFC<ScheduleProps> = (props) => {
     let [sportid, setSportid] = useState('0');
     let [summary, setSummary] = useState('');
     let [trainers, setTrainers] = useState<ITrainer2[]>([]);
+    // let [trainer, setTrainer] = useState({
+    //     id: 0,
+    //     username: '',
+    //     email: '',
+    //     role: '',
+    //     trainingrole: '',
+    //     bio: '',
+    //     avatar: '',
+    //     sportname: ''
+    // })
     let [selectedTrainer, setSelectedTrainer] = useState('');
     let [trainee, setTrainee] = useState(User.userid);
     let [timepicker, settimepicker] = useState('')
+    // let [user, setuser] = useState({
+    //     id: '',
+    //     username: '',
+    //     email: '',
+    //     role: '',
+    //     trainingrole: '',
+    //     bio: '',
+    //     avatar: '',
+    //     sportid: 0,
+    //     sportname: '',
+    // });
 
     const getSports = async () => {
         let result = await json('/api/sports');
         setSports(result)
     };
 
+    // const getTrainer = async () => {
+    //     let result = await json(`/api/users/${props.match.params.userid}`);
+    //     setTrainer(result);
+    // }
+
     const getTrainers = async () => {
         let result = await json('/api/trainingrole/trainer');
         setTrainers(result);
     }
+
+    // const getUser = async () => {
+    //     let result = await json(`/api/users/${User.userid}`)
+    //     setuser(result);
+    // }
 
     useEffect(() => {
         if (!User || User.role === null) {
@@ -34,6 +65,8 @@ const Schedule: React.SFC<ScheduleProps> = (props) => {
         } else {
             getSports();
             getTrainers();
+            // getTrainer();
+            // getUser();
         }
     }, [])
 
@@ -59,6 +92,8 @@ const Schedule: React.SFC<ScheduleProps> = (props) => {
             throw error
         }
     }
+
+    console.log(User.sportname)
     
     return (
         <>
@@ -69,7 +104,8 @@ const Schedule: React.SFC<ScheduleProps> = (props) => {
                         <input value={name} onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setName(e.target.value) }} type="text" className="form-control p-2" placeholder="Basketball - Shooting" />
                         <label className="pt-1">Sport:</label>
                         <select value={sportid} onChange={(e: React.ChangeEvent<HTMLSelectElement>) => { setSportid(e.target.value) }} className="form-control p-2">
-                            <option className="align-text-bottom" value="default">Please Select a Sport...</option>
+                        <option> Please Select A Sport ...</option>
+                            {/* <input type="text" value={user.sportid} placeholder={user.sportname} className="form-control p-2"/> */}
                             {sports.map(sport => {
                                 return (
                                     <option key={sport.id} value={sport.id}>{sport.sportname}</option>
@@ -78,13 +114,14 @@ const Schedule: React.SFC<ScheduleProps> = (props) => {
                         </select>
                         <label>Trainer:</label>
                         <select value={selectedTrainer} onChange={(e: React.ChangeEvent<HTMLSelectElement>) => { setSelectedTrainer(e.target.value) }} className="form-control p-2">
-                            <option value="default">Please Select a Trainer</option>
+                            {/* <input value={trainer.username} type="text" className="form-control p-2" /> */}
+                            <option> Please Select A Trainer ...</option>
                             {trainers.map(trainer => {
                                 return (
                                     <option key={trainer.id} value={trainer.id}>{trainer.username}</option>
                                 )
                             })}
-                        </select>
+                          </select> 
                         <label className="pt-1">Summary of Training Needed:</label>
                         <textarea value={summary} onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => { setSummary(e.target.value) }} className="form-control p-2" rows={5} placeholder="During my current season I am 18 for 80 on three-pointers. I think my problem is my shooting motion and arc."></textarea>
                         <label className="pt-1">Select A Date:</label>
@@ -101,7 +138,7 @@ const Schedule: React.SFC<ScheduleProps> = (props) => {
 
 export interface ScheduleProps extends RouteComponentProps<{userid: string}> {
     sports: ISport[],
-    trainers: ITrainer2[]
+    trainers: ITrainer2[],
 }
 
 export default Schedule;

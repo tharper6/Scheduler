@@ -32,13 +32,13 @@ const Trainers: React.SFC<TrainersProps> = (props) => {
                             <article className="col-md-10">
                             <div className="card m-2 rounded shadow">
                                 <div className="card-body text-center pt-0">
-                                <img src={trainer.avatar} alt="user avatar" style={{ height: '150px', width: '150px' }} className="mt-2 ml-1" />
+                                <img src={trainer.avatar} alt="user avatar" style={{ height: '150px', width: '150px' }} className="mt-2 ml-1 border rounded-circle" />
                                     <p>{trainer.username}</p>
                                     <p>{trainer.email}</p>
                                     <p>{trainer.sportname}</p>
                                     <p>{trainer.bio}</p>
-                                    {/* <Link className="btn btn-dark col-md-12" to={`/schedule/${trainer.id}`}>Schedule Session</Link> */}
-                                    <button className="btn btn-dark col-md-12" onClick={(e: React.MouseEvent<HTMLButtonElement>) => sessionBtn()} >Schedule Session!</button>
+                                    <Link className="btn btn-dark col-md-12" to={`/schedule/${trainer.id}`}>Schedule Session</Link>
+                                    {/* <button className="btn btn-dark col-md-12" onClick={(e: React.MouseEvent<HTMLButtonElement>) => sessionBtn()} >Schedule Session!</button> */}
                                 </div>
                             </div>
                             </article>
@@ -54,5 +54,6 @@ const Trainers: React.SFC<TrainersProps> = (props) => {
 export interface TrainersProps extends RouteComponentProps<{userid: string}> {
     trainers: ITrainer[]
 }
-
+//https://cdn1.iconfinder.com/data/icons/flat-business-icons/128/user-256.png
+//'https://i.ibb.co/gP9Cf0W/imageedit-1-7778775978.jpg'
 export default Trainers;

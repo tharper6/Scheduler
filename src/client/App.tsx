@@ -26,7 +26,7 @@ class App extends React.Component<IAppProps> {
                     <Route exact path='/profile/:userid' component={Profile} />
                     <Route exact path='/trainers' component={Trainers} />      
                     <Route exact path='/trainees' component={Trainees} />
-                    <Route exact path='/schedule' component={Schedule} /> 
+                    <Route exact path='/schedule/:userid' component={Schedule} /> 
                     <Route exact path='/profile/bio/:userid' component={TrainerBio} /> 
                 </Switch>
             </Router>

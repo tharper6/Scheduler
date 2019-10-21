@@ -44,6 +44,7 @@ class Home extends React.Component<IHomeProps, IHomeState> {
             <div className="row justify-content-center mb-2">
             <a href="/schedule"><h4 className="text-dark">Step 3: Schedule A Session!</h4></a>
             </div>
+            <img src="https://cdn1.iconfinder.com/data/icons/project-management-8/500/worker-256.png" alt=""/>
             </section>
             
                         {/* <section className="row justify-content-center text-center">
