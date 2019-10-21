@@ -27,7 +27,7 @@ const TrainerBio: React.SFC<TrainerBioProps> = (props) => {
     const addBio = async () => {
         try {
             let userBio = await json(`/api/trainingrole/trainers/${User.userid}`, 'POST', {bio});
-            this.props.history.push(`/profile/${User.userid}`)
+            props.history.push(`/profile/${User.userid}`)
         } catch (error) {
             console.log(error);
             throw error
