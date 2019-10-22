@@ -9,6 +9,7 @@ import Trainers from './Pages/Trainers';
 import Trainees from './Pages/Trainees';
 import Schedule from './Pages/Schedule';
 import TrainerBio from './Pages/TrainerBio';
+import ContactForm from './Components/ContactForm'
 
 
 
@@ -28,6 +29,7 @@ class App extends React.Component<IAppProps> {
                     <Route exact path='/trainees' component={Trainees} />
                     <Route exact path='/schedule/:userid' component={Schedule} /> 
                     <Route exact path='/profile/bio/:userid' component={TrainerBio} /> 
+                    <Route exact path='/contact/:id' component={ContactForm} /> 
                 </Switch>
             </Router>
             </>

@@ -2,6 +2,7 @@ import * as React from 'react';
 import {useState, useEffect} from 'react';
 import {json} from '../Utils/api';
 import {ITrainer} from '../Utils/interfaces'
+import { Link } from 'react-router-dom';
 
 const Trainees: React.SFC<ITraineesProps> = (props) => {
 
@@ -32,6 +33,7 @@ const Trainees: React.SFC<ITraineesProps> = (props) => {
                                     <p>{trainee.username}</p>
                                     <p>{trainee.email}</p>
                                     <p>{trainee.sportname}</p>
+                                    <Link className="btn btn-dark col-md-6" to={`/contact/${trainee.id}`}>Contact</Link>
                                 </div>
                             </div>
                             </article>

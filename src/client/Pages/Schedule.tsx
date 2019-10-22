@@ -4,6 +4,7 @@ import { Calendar } from 'react-calendar/dist/entry';
 import {json, User} from '../Utils/api'
 import { RouteComponentProps } from 'react-router';
 import { ISport, ITrainer2, IUser, IUser2 } from '../Utils/interfaces';
+import Swal from 'sweetalert2';
 
 
 const Schedule: React.SFC<ScheduleProps> = (props) => {
@@ -53,6 +54,13 @@ const Schedule: React.SFC<ScheduleProps> = (props) => {
                 date,
                 time: timepicker
             });
+            Swal.fire({
+                position: 'top-end',
+                type: 'success',
+                title: 'You have scheduled your session!',
+                showConfirmButton: false,
+                timer: 2000
+              })
             props.history.push(`/profile/${User.userid}`);
         } catch (error) {
             console.log(error);

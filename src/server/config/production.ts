@@ -7,5 +7,9 @@ export default {
     },
     auth: {
         secret: process.env.SECRET
+    },
+    keys: {
+        apikey: process.env.APIKEY,
+        domain: process.env.DOMAIN
     }
 }
