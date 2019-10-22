@@ -26,11 +26,11 @@ class UserCard extends React.Component<IUserCardProps> {
         }
     }
 
-    logoutbutton() {
-        localStorage.clear();
-        this.props.history.push('/')
-        window.location.reload();
-    }
+    // logoutbutton() {
+    //     localStorage.clear();
+    //     this.props.history.push('/')
+    //     window.location.reload();
+    // }
 
     cards (label: string, data: any) {
         return (
@@ -70,7 +70,7 @@ class UserCard extends React.Component<IUserCardProps> {
                 </div>
                 <div className="row justify-content-center mt-4">
                     {this.trainerbutton()}
-                    <button className="btn btn-dark ml-4" onClick={() => this.logoutbutton()} >Logout</button>
+                    {/* <button className="btn btn-dark ml-4" onClick={() => this.logoutbutton()} >Logout</button> */}
                 </div>
                 <hr className="text-dark" />
                 <section>
