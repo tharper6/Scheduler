@@ -12,14 +12,15 @@ A capstone project from Covalence designed to showcase my full stack development
  - React Calendar
  
  ## Installation
-`` git clone https://github.com/tharper6/Scheduler.git scheduler``
-  ``cd scheduler``
-  ``npm install``
-  ``npm run dev``
-
+`` git clone https://github.com/tharper6/Scheduler.git scheduler``  
+  ``cd scheduler``  
+  ``npm install``  
+  ``npm run dev``  
+ 
 MySQL Data
 <details>
   <summary>Click For MySQL Data</summary>
+
 
 CREATE TABLE users (  
 id INT AUTO_INCREMENT PRIMARY KEY,  
@@ -34,43 +35,43 @@ bio VARCHAR (1500) NULL,
 _created DATETIME DEFAULT CURRENT_TIMESTAMP  
 );
 
-create table sports (
-id INT AUTO_INCREMENT PRIMARY KEY,
-name VARCHAR (60) NOT NULL,
-_created DATETIME DEFAULT CURRENT_TIMESTAMP
-);
+create table sports (  
+id INT AUTO_INCREMENT PRIMARY KEY,  
+name VARCHAR (60) NOT NULL,  
+_created DATETIME DEFAULT CURRENT_TIMESTAMP  
+);  
 
-create table sessions (
-id INT AUTO_INCREMENT PRIMARY KEY,
-name VARCHAR (60) NOT NULL,
-sportid INT NOT NULL,
-summary VARCHAR (2000) NULL,
-date DATETIME NOT NULL,
-trainerid INT NULL,
-traineeid INT NULL,
-time VARCHAR (60) NOT NULL,
-_created DATETIME DEFAULT CURRENT_TIMESTAMP
-);
+create table sessions (  
+id INT AUTO_INCREMENT PRIMARY KEY,  
+name VARCHAR (60) NOT NULL,  
+sportid INT NOT NULL,  
+summary VARCHAR (2000) NULL,  
+date DATETIME NOT NULL,  
+trainerid INT NULL,  
+traineeid INT NULL,  
+time VARCHAR (60) NOT NULL,  
+_created DATETIME DEFAULT CURRENT_TIMESTAMP  
+);  
 
-create table tokens (
-id INT AUTO_INCREMENT PRIMARY KEY,
-token TEXT NULL,
-userid int NOT NULL,
-_created DATETIME DEFAULT CURRENT_TIMESTAMP
-);
+create table tokens (  
+id INT AUTO_INCREMENT PRIMARY KEY,  
+token TEXT NULL,  
+userid int NOT NULL,  
+_created DATETIME DEFAULT CURRENT_TIMESTAMP  
+);  
 
-ALTER TABLE users
-ADD CONSTRAINT fk_users_to_sports
-FOREIGN KEY (sportid)
-REFERENCES sports(id)
+ALTER TABLE users  
+ADD CONSTRAINT fk_users_to_sports  
+FOREIGN KEY (sportid)  
+REFERENCES sports(id)  
 
-ALTER TABLE tokens
-ADD CONSTRAINT fk_tokens_to_users
-FOREIGN KEY (userid)
-REFERENCES users(id)
+ALTER TABLE tokens  
+ADD CONSTRAINT fk_tokens_to_users  
+FOREIGN KEY (userid)  
+REFERENCES users(id)  
 
-ALTER TABLE sessions 
-ADD CONSTRAINT fk_sessions_to_sports
-FOREIGN KEY (sportid) 
-REFERENCES sports(id)
+ALTER TABLE sessions  
+ADD CONSTRAINT fk_sessions_to_sports  
+FOREIGN KEY (sportid)  
+REFERENCES sports(id)  
 </details>
