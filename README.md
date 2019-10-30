@@ -10,6 +10,7 @@ A capstone project from Covalence designed to showcase my full stack development
  - Express JS
  - Sweet Alerts
  - React Calendar
+ - Mailgun JS
  
  ## Installation
 `` git clone https://github.com/tharper6/Scheduler.git scheduler``  
@@ -75,3 +76,18 @@ ADD CONSTRAINT fk_sessions_to_sports
 FOREIGN KEY (sportid)  
 REFERENCES sports(id)  
 </details>
+
+## Things I learned
+
+My 12-week course at Covalence was comprised of many lectures and labs which always had very detailed instructions on how to complete. This capstone project was my first true test of creating an application from a blank canvas. Below is a list of new things I learned in the project.
+
+### Dependencies
+
+ - **React-Calendar**
+ Using this calendar I learned that not all dependencies come ready to go after installation. One problem I ran into with React Calendar was a typescript error. I assumed that I was causing the error due to not correctly using the calendar but after a 
+ - **React-Icons/ Sweet-Alert**
+ While using react-icons and sweet alert, I learned that I could really bring my pages to life by just adding a couple icons and alerts as the user interacts with my webpage. 
+
+### Organization
+
+ - I found out the hard way that taking small simple steps throughout my project was much more efficent than trying to create a big idea all at once. I learned that even though I am typing code all day, I need to take a step back and hand-write step by step what my plan is and execute each step before I start the next one. I learned breaking down each objective into as many small steps as possible, for me, is the best and most effecient way to tackle any sized application. 
