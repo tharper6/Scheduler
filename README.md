@@ -23,7 +23,8 @@ MySQL Data
   <summary>Click For MySQL Data</summary>
 
 
-```CREATE TABLE users (  
+```  
+CREATE TABLE users (  
 id INT AUTO_INCREMENT PRIMARY KEY,  
 name VARCHAR (60) NOT NULL,  
 email VARCHAR (60) NOT NULL,  
@@ -74,7 +75,8 @@ REFERENCES users(id)
 ALTER TABLE sessions  
 ADD CONSTRAINT fk_sessions_to_sports  
 FOREIGN KEY (sportid)  
-REFERENCES sports(id)```  
+REFERENCES sports(id)
+```  
 </details>
 
 ## Things I learned
