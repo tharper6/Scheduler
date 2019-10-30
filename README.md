@@ -21,17 +21,17 @@ MySQL Data
 <details>
   <summary>Click For MySQL Data</summary>
 
-CREATE TABLE users (
-id INT AUTO_INCREMENT PRIMARY KEY,
-name VARCHAR (60) NOT NULL,
-email VARCHAR (60) NOT NULL,
-password VARCHAR (60) NOT NULL,
-sportid INT NULL,
-role VARCHAR (30) NULL DEFAULT 'admin',
-trainingrole VARCHAR (45) NOT NULL,
-avatar VARCHAR (80) NULL DEFAULT 'https://tinyurl.com/y4jh5uus',
-bio VARCHAR (1500) NULL,
-_created DATETIME DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE users (  
+id INT AUTO_INCREMENT PRIMARY KEY,  
+name VARCHAR (60) NOT NULL,  
+email VARCHAR (60) NOT NULL,  
+password VARCHAR (60) NOT NULL,  
+sportid INT NULL,  
+role VARCHAR (30) NULL DEFAULT 'admin',  
+trainingrole VARCHAR (45) NOT NULL,  
+avatar VARCHAR (80) NULL DEFAULT 'https://tinyurl.com/y4jh5uus',  
+bio VARCHAR (1500) NULL,  
+_created DATETIME DEFAULT CURRENT_TIMESTAMP  
 );
 
 create table sports (
