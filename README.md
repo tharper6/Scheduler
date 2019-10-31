@@ -86,7 +86,12 @@ My 12-week course at Covalence was comprised of many lectures and labs which alw
 ### Dependencies
 
  - **React-Calendar**
- Using this calendar I learned that not all dependencies come ready to go after installation. One problem I ran into with React Calendar was a typescript error. I assumed that I was causing the error due to not correctly using the calendar but after a 
+ Using this calendar I learned that not all dependencies come ready to go after installation. One problem I ran into with React Calendar was a typescript error. I assumed that I was causing the error due to not correctly using the calendar but after some research I found that since this dependency does not have typings, that I need to import it safely. Instead of using 
+ `import * as Calendar from 'react-calendar';`, I found that `import { Calendar } from 'react-calendar/dist/entry';` worked just fine. One other error I encountered while using React-Calendar was that it did not come with a css-loader so I had to write a new rule in webpack.config 
+ ```
+test: /\.css$/i,
+use: ['style-loader', 'css-loader']
+```
  - **React-Icons/ Sweet-Alert**
  While using react-icons and sweet alert, I learned that I could really bring my pages to life by just adding a couple icons and alerts as the user interacts with my webpage. 
 
