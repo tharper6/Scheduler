@@ -23,9 +23,39 @@ router.get('/trainer/:trainerid', async (req, res) => {
     }
 })
 
+router.get('/trainercount/:trainerid', async (req, res) => {
+    try {
+        let [result]: any = await db.sessions.countSessionsByTrainer(req.params.trainerid)
+        res.json(result)
+    } catch (error) {
+        console.log(error);
+        res.status(500).json('Contact Admin')
+    }
+})
+
+router.get('/traineecount/:traineeid', async (req, res) => {
+    try {
+        let [result]: any = await db.sessions.countSessionsByTrainee(req.params.traineeid)
+        res.json(result)
+    } catch (error) {
+        console.log(error);
+        res.status(500).json('Contact Admin')
+    }
+})
+
 router.get('/trainee/:traineeid', async (req, res) => {
     try {
         let result = await db.sessions.getSessionsByTrainee(req.params.traineeid)
+        res.json(result)
+    } catch (error) {
+        console.log(error);
+        res.status(500).json('Contact Admin')
+    }
+})
+
+router.delete('/:id', async (req, res) => {
+    try {
+        let result = await db.sessions.destroySession(req.params.id)
         res.json(result)
     } catch (error) {
         console.log(error);

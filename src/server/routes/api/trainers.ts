@@ -1,5 +1,6 @@
 import * as express from 'express';
 import db from '../../db';
+import { readdirSync } from 'fs';
 
 const router = express.Router();
 
@@ -26,7 +27,9 @@ router.put('/trainers/:id', async (req, res) => {
         console.log(error);
         res.status(500).json("Please Contact Admin")
     }
-})
+});
+
+
 
 
 export default router;

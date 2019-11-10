@@ -1,6 +1,7 @@
 export interface ISport {
     id: number,
-    sportname: string
+    sportname: string,
+    sportimg: string
 }
 
 export interface IUser {
@@ -34,7 +35,8 @@ export interface ITrainer {
     trainingrole: string,
     sportname: string,
     bio: string,
-    avatar: string
+    avatar: string,
+    sportimg: string
 }
 
 export interface ITrainer2 {

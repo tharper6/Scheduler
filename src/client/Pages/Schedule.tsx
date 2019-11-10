@@ -87,14 +87,15 @@ const Schedule: React.SFC<ScheduleProps> = (props) => {
                             })}
                         </select>
                         <label>Trainer:</label>
-                        <select value={selectedTrainer} onChange={(e: React.ChangeEvent<HTMLSelectElement>) => { setSelectedTrainer(e.target.value) }} className="form-control p-2">
+                        <input className="form-control p-2" type="text" value={props.match.params.username}/>
+                        {/* <select value={selectedTrainer} onChange={(e: React.ChangeEvent<HTMLSelectElement>) => { setSelectedTrainer(e.target.value) }} className="form-control p-2">
                             <option> Please Select A Trainer ...</option>
                             {trainers.map(trainer => {
                                 return (
                                     <option key={trainer.id} value={trainer.id}>{trainer.username}</option>
                                 )
                             })}
-                          </select> 
+                          </select>  */}
                         <label className="pt-1">Summary of Training Needed:</label>
                         <textarea value={summary} onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => { setSummary(e.target.value) }} className="form-control p-2" rows={5} placeholder="During my current season I am 18 for 80 on three-pointers. I think my problem is my shooting motion and arc."></textarea>
                         <label className="pt-1">Select A Date:</label>
@@ -109,7 +110,7 @@ const Schedule: React.SFC<ScheduleProps> = (props) => {
     )
 }
 
-export interface ScheduleProps extends RouteComponentProps<{userid: string}> {
+export interface ScheduleProps extends RouteComponentProps<{username: string}> {
     sports: ISport[],
     trainers: ITrainer2[],
 }
