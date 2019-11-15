@@ -35,7 +35,7 @@ class Contact extends React.Component<IContactProps, IContactState> {
                 showConfirmButton: false,
                 timer: 2000
               })
-            this.props.history.push('/trainees')
+            this.props.history.push(`/profile/${this.props.match.params.id}`)
         } catch (error) {
             throw error;
         }
