@@ -12,7 +12,7 @@ export default {
         apikey: process.env.APIKEY,
         domain: process.env.DOMAIN
     },
-    aws: {
+    awskeys: {
         accesskeyid: process.env.ACCESSKEY,
         secretkey: process.env.SECRETKEY
     }
