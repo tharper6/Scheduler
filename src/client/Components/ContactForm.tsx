@@ -46,7 +46,7 @@ class Contact extends React.Component<IContactProps, IContactState> {
             <main className="container my-5">
                 <form className="form-group mt-5 rounded p-3 shadow-lg" onSubmit={this.onSubmit} >
                     <label>Email:</label>
-                    <input type="text" className="input-group my-1 p-1" value={this.state.email} onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ email: e.target.value })} />
+                    <input type="text" className=" test input-group my-1 p-1" value={this.state.email} onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ email: e.target.value })} />
                     <label>Subject:</label>
                     <input type="text" className="input-group my-1 p-1" value={this.state.subject} onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ subject: e.target.value })} />
                     <label>Messages:</label>
