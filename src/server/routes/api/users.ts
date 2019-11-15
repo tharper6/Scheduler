@@ -3,7 +3,7 @@ import db from '../../db';
 import * as multer from 'multer';
 import * as aws from 'aws-sdk';
 import * as multers3 from 'multer-s3';
-import config from '../../config/development';
+import config from '../../config';
 
 aws.config.update({
     secretAccessKey: config.awskeys.secretkey,
